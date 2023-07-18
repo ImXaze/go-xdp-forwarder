@@ -1,0 +1,25 @@
+{
+  "Layer7Protection": true,
+  "BindAddresses": ["192.168.1.1", "192.168.1.2"],
+  "InternalAddress": "10.0.0.1",
+  "Ports": {
+    "From": [8080, 8081],
+    "To": [9000, 9001]
+  },
+  "XDP_eBPF": true,
+  "A2SQueries": {
+    "Header": "T",
+    "Payload": "Source Engine Query\\0",
+    "Challenge": 12345678
+  },
+  "PortForwarders": [
+    {
+      "Address": "192.168.1.1",
+      "Ports": [8080, 8081]
+    },
+    {
+      "Address": "192.168.1.2",
+      "Ports": [9000, 9001]
+    }
+  ]
+}
